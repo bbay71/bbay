@@ -198,6 +198,20 @@
             max-width: calc(100% - 60px);
             margin: 0 auto;
         }
+
+        /* Стили для route1 и route2 */
+        .route1 {
+            font-size: 18px;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        .route2 {
+            font-size: 14px;
+            font-weight: 300;
+            color: #aaa;
+            margin-top: 5px;
+        }
     </style>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
@@ -227,15 +241,15 @@
        <div>
            <img class="icon2" src="ии/img/2.png" alt="Маршрут">
            <div class="text">
-               <span class="value2"><input type="text" id="route" value=""></span>
-               <span class="value"><input type="text" id="route" value=""></span>
+               <span class="route1" id="route1"></span> <!-- Route 1 -->
+               <span class="route2" id="route2"></span> <!-- Route 2 -->
            </div>
        </div>
        <div>
            <img class="icon3" src="ии/img/3.png" alt="Стоимость">
            <div class="text">
                <span class="label">Стоимость</span>
-               <span class="value"><input type="text" id="cost" value=""></span>
+               <span class="value">1 шт., Полный, 44.00 ₽</span>
            </div>
        </div>
        <div>
@@ -296,8 +310,8 @@
 
         // Получаем значения параметров из URL
         document.getElementById('carrier').value = getParameterByName('carrier') || '';
-        document.getElementById('route').value = getParameterByName('route') || '';
-        document.getElementById('cost').value = getParameterByName('cost') || '';
+        document.getElementById('route1').textContent = getParameterByName('route1') || '';
+        document.getElementById('route2').textContent = getParameterByName('route2') || '';
         document.getElementById('purchase-date').value = getParameterByName('purchase_date') || '';
         document.getElementById('purchase-time').value = getParameterByName('purchase_time') || '';
     };
